@@ -1,5 +1,9 @@
 package xyz.chaobei.api;
-
+/*
+ * @Author MRC
+ * @Description 默认定义的返回类型
+ * @Date 11:06 2020/9/25
+ **/
 public class CommonResult<T> {
     /**
      * 状态码
