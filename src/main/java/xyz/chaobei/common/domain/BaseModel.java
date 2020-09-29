@@ -23,4 +23,36 @@ public class BaseModel {
      * 时间搜索结束
      */
     protected Date endTime;
+
+    public Long getCurrent() {
+        return current;
+    }
+
+    public void setCurrent(Long current) {
+        this.current = current;
+    }
+
+    public Long getSize() {
+        return size;
+    }
+
+    public void setSize(Long size) {
+        this.size = size;
+    }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
 }
