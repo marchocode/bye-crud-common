@@ -1,12 +1,11 @@
 package xyz.chaobei.common.domain;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.Date;
 
-@Getter
-@Setter
+/**
+ * @author MRC
+ * @title 一般用于分页的baseModel
+ */
 public class BaseModel {
     /**
      * 当前页数 默认1
