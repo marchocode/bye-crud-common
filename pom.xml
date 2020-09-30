@@ -40,9 +40,10 @@
 
     <profiles>
         <profile>
-            <id>release</id>
+            <id>ossrh</id>
             <build>
                 <plugins>
+                    <!-- source -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
@@ -56,6 +57,7 @@
                             </execution>
                         </executions>
                     </plugin>
+                    <!-- java doc -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
@@ -69,7 +71,7 @@
                             </execution>
                         </executions>
                     </plugin>
-
+                    <!-- gpg -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>

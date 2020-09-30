@@ -1,5 +1,12 @@
 package xyz.chaobei.common.api;
 
+/**
+ * 自定义返回类型
+ *
+ * @param <T> 泛型、指定返回的类型.
+ * @author <a href='mailto:maruichao52@gmail.com'>MRC</a>
+ * @since 2020-09-30
+ */
 public class CommonResult<T> {
     /**
      * 状态码
@@ -14,8 +21,18 @@ public class CommonResult<T> {
      */
     private T data;
 
-    private CommonResult() {}
+    private CommonResult() {
+    }
 
+    /**
+     * <a href='mailto:maruichao52@gmail.com'>MRC</a>
+     *
+     * @param code    返回参数
+     * @param message 返回信息
+     * @param data    返回数据
+     * @return
+     * @since 2020/9/30
+     **/
     protected CommonResult(long code, String message, T data) {
         this.code = code;
         this.message = message;
@@ -23,29 +40,40 @@ public class CommonResult<T> {
     }
 
     /**
-     * 成功返回结果
+     * 返回一个成功的类型
+     * author:<a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
-     * @param data 获取的数据
-     */
+     * @param data 返回数据
+     * @param <T>  返回类型
+     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @since 2020/9/30
+     **/
     public static <T> CommonResult<T> success(T data) {
         return new CommonResult<T>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(), data);
     }
 
     /**
-     * 成功返回结果
+     * 返回一个成功的类型，并且附带提示信息.
+     * <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
-     * @param data    获取的数据
-     * @param message 提示信息
-     */
+     * @param data    返回数据
+     * @param message 返回信息
+     * @param <T>     返回类型
+     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @since 2020/9/30
+     **/
     public static <T> CommonResult<T> success(T data, String message) {
         return new CommonResult<T>(ResultCode.SUCCESS.getCode(), message, data);
     }
 
     /**
-     * 成功返回结果
+     * 通过一个boolean 类型自动确定返回值
+     * <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
-     * @param result 布尔类型返回值
-     */
+     * @param result 返回布尔
+     * @return xyz.chaobei.common.api.CommonResult
+     * @since 2020/9/30
+     **/
     public static CommonResult result(Boolean result) {
         if (result) {
             return success(true);
@@ -54,66 +82,91 @@ public class CommonResult<T> {
     }
 
     /**
-     * 失败返回结果
+     * 返回一个操作失败类型
      *
-     * @param errorCode 错误码
+     * @param errorCode 自定义code
+     * @param <T>       null
+     * @return 返回一个操作失败类型
+     * @see {@link IErrorCode}
      */
     public static <T> CommonResult<T> failed(IErrorCode errorCode) {
         return new CommonResult<T>(errorCode.getCode(), errorCode.getMessage(), null);
     }
 
     /**
-     * 失败返回结果
+     * 返回一个自定义操作失败类型。传递操作失败的原因
+     * <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
-     * @param errorCode 错误码
-     * @param message   错误信息
-     */
-    public static <T> CommonResult<T> failed(IErrorCode errorCode, String message) {
-        return new CommonResult<T>(errorCode.getCode(), message, null);
-    }
-
-    /**
-     * 失败返回结果
-     *
-     * @param message 提示信息
-     */
+     * @param message 自定义返回信息
+     * @param <T>     null
+     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @since 2020/9/30
+     **/
     public static <T> CommonResult<T> failed(String message) {
         return new CommonResult<T>(ResultCode.FAILED.getCode(), message, null);
     }
 
     /**
-     * 失败返回结果
-     */
+     * 返回一个操作失败
+     * <a href='mailto:maruichao52@gmail.com'>MRC</a>
+     *
+     * @param <T> null
+     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @see IErrorCode
+     * @since 2020/9/30
+     **/
     public static <T> CommonResult<T> failed() {
         return failed(ResultCode.FAILED);
     }
 
     /**
-     * 参数验证失败返回结果
-     */
+     * 参数校验异常
+     * <a href='mailto:maruichao52@gmail.com'>MRC</a>
+     *
+     * @param <T> null
+     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @see IErrorCode
+     * @since 2020/9/30
+     **/
     public static <T> CommonResult<T> validateFailed() {
         return failed(ResultCode.VALIDATE_FAILED);
     }
 
     /**
-     * 参数验证失败返回结果
+     * 参数校验异常，并提示信息
+     * <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
-     * @param message 提示信息
-     */
+     * @param <T> null
+     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @see IErrorCode
+     * @since 2020/9/30
+     **/
     public static <T> CommonResult<T> validateFailed(String message) {
         return new CommonResult<T>(ResultCode.VALIDATE_FAILED.getCode(), message, null);
     }
 
     /**
-     * 未登录返回结果
-     */
+     * 提示前端需要进行认证操作
+     * <a href='mailto:maruichao52@gmail.com'>MRC</a>
+     *
+     * @param <T> null
+     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @see IErrorCode
+     * @since 2020/9/30
+     **/
     public static <T> CommonResult<T> unauthorized(T data) {
         return new CommonResult<T>(ResultCode.UNAUTHORIZED.getCode(), ResultCode.UNAUTHORIZED.getMessage(), data);
     }
 
     /**
-     * 未授权返回结果
-     */
+     * 无相关权限信息
+     * <a href='mailto:maruichao52@gmail.com'>MRC</a>
+     *
+     * @param <T> null
+     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @see IErrorCode
+     * @since 2020/9/30
+     **/
     public static <T> CommonResult<T> forbidden(T data) {
         return new CommonResult<T>(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);
     }

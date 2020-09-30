@@ -1,5 +1,11 @@
 package xyz.chaobei.common.api;
 
+/**
+ * 常用code 自定义，参考http code
+ *
+ * @author <a href='mailto:maruichao52@gmail.com'>MRC</a>
+ * @since 2020-09-30
+ */
 public enum ResultCode implements IErrorCode {
 
     SUCCESS(200, "操作成功"),
@@ -11,7 +17,7 @@ public enum ResultCode implements IErrorCode {
     private final long code;
     private final String message;
 
-    private ResultCode(long code, String message) {
+    ResultCode(long code, String message) {
         this.code = code;
         this.message = message;
     }
