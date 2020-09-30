@@ -42,11 +42,9 @@ public class CommonResult<T> {
     }
 
     /**
-     * 功能描述: 通过布尔值进行返回
-     * @Param: [isBoolean]
-     * @Return: CommonResult<T>
-     * @Author: MRC
-     * @Date: 2020/9/24 23:26
+     * 成功返回结果
+     *
+     * @param result 布尔类型返回值
      */
     public static CommonResult result(Boolean result) {
         if (result) {

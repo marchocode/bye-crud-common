@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * @author MRC
- * @title 一般用于分页的baseModel
+ * <p> 一般用于分页的baseModel
  */
 public class BaseModel {
     /**
