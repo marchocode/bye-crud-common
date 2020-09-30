@@ -25,7 +25,8 @@ public class CommonResult<T> {
     }
 
     /**
-     * <a href='mailto:maruichao52@gmail.com'>MRC</a>
+     * <p>基本构造函数
+     * <p>author: <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
      * @param code    返回参数
      * @param message 返回信息
@@ -164,6 +165,7 @@ public class CommonResult<T> {
      * <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
      * @param <T> null
+     * @param data 具体返回信息
      * @return xyz.chaobei.common.api.CommonResult
      * @see IErrorCode
      * @since 2020/9/30
