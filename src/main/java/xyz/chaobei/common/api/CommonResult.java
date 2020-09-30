@@ -30,7 +30,6 @@ public class CommonResult<T> {
      * @param code    返回参数
      * @param message 返回信息
      * @param data    返回数据
-     * @return
      * @since 2020/9/30
      **/
     protected CommonResult(long code, String message, T data) {
@@ -45,7 +44,7 @@ public class CommonResult<T> {
      *
      * @param data 返回数据
      * @param <T>  返回类型
-     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @return xyz.chaobei.common.api.CommonResult
      * @since 2020/9/30
      **/
     public static <T> CommonResult<T> success(T data) {
@@ -59,7 +58,7 @@ public class CommonResult<T> {
      * @param data    返回数据
      * @param message 返回信息
      * @param <T>     返回类型
-     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @return xyz.chaobei.common.api.CommonResult
      * @since 2020/9/30
      **/
     public static <T> CommonResult<T> success(T data, String message) {
@@ -87,7 +86,7 @@ public class CommonResult<T> {
      * @param errorCode 自定义code
      * @param <T>       null
      * @return 返回一个操作失败类型
-     * @see {@link IErrorCode}
+     * @see IErrorCode
      */
     public static <T> CommonResult<T> failed(IErrorCode errorCode) {
         return new CommonResult<T>(errorCode.getCode(), errorCode.getMessage(), null);
@@ -99,7 +98,7 @@ public class CommonResult<T> {
      *
      * @param message 自定义返回信息
      * @param <T>     null
-     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @return xyz.chaobei.common.api.CommonResult
      * @since 2020/9/30
      **/
     public static <T> CommonResult<T> failed(String message) {
@@ -111,7 +110,7 @@ public class CommonResult<T> {
      * <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
      * @param <T> null
-     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @return xyz.chaobei.common.api.CommonResult
      * @see IErrorCode
      * @since 2020/9/30
      **/
@@ -124,7 +123,7 @@ public class CommonResult<T> {
      * <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
      * @param <T> null
-     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @return xyz.chaobei.common.api.CommonResult
      * @see IErrorCode
      * @since 2020/9/30
      **/
@@ -136,8 +135,9 @@ public class CommonResult<T> {
      * 参数校验异常，并提示信息
      * <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
+     * @param message 提示语句
      * @param <T> null
-     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @return xyz.chaobei.common.api.CommonResult
      * @see IErrorCode
      * @since 2020/9/30
      **/
@@ -150,7 +150,8 @@ public class CommonResult<T> {
      * <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
      * @param <T> null
-     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @param data 指定返回的信息
+     * @return xyz.chaobei.common.api.CommonResult
      * @see IErrorCode
      * @since 2020/9/30
      **/
@@ -163,7 +164,7 @@ public class CommonResult<T> {
      * <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
      * @param <T> null
-     * @return xyz.chaobei.common.api.CommonResult<T>
+     * @return xyz.chaobei.common.api.CommonResult
      * @see IErrorCode
      * @since 2020/9/30
      **/
