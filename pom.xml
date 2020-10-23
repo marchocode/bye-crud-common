@@ -6,7 +6,7 @@
 
     <groupId>xyz.chaobei</groupId>
     <artifactId>bye-crud-common</artifactId>
-    <version>1.2</version>
+    <version>1.3</version>
 
     <name>bye-crud-common</name>
     <description>bye-crud-generate common util</description>

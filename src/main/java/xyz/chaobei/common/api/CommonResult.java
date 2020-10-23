@@ -129,7 +129,7 @@ public class CommonResult<T> {
      * @since 2020/9/30
      **/
     public static <T> CommonResult<T> validateFailed() {
-        return failed(ResultCode.VALIDATE_FAILED);
+        return failed(ResultCode.FIELD_ERROR);
     }
 
     /**
@@ -143,7 +143,7 @@ public class CommonResult<T> {
      * @since 2020/9/30
      **/
     public static <T> CommonResult<T> validateFailed(String message) {
-        return new CommonResult<T>(ResultCode.VALIDATE_FAILED.getCode(), message, null);
+        return new CommonResult<T>(ResultCode.FIELD_ERROR.getCode(), message, null);
     }
 
     /**
@@ -157,7 +157,7 @@ public class CommonResult<T> {
      * @since 2020/9/30
      **/
     public static <T> CommonResult<T> unauthorized(T data) {
-        return new CommonResult<T>(ResultCode.UNAUTHORIZED.getCode(), ResultCode.UNAUTHORIZED.getMessage(), data);
+        return new CommonResult<T>(ResultCode.UN_AUTHORIZED.getCode(), ResultCode.UN_AUTHORIZED.getMessage(), data);
     }
 
     /**
@@ -171,7 +171,7 @@ public class CommonResult<T> {
      * @since 2020/9/30
      **/
     public static <T> CommonResult<T> forbidden(T data) {
-        return new CommonResult<T>(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);
+        return new CommonResult<T>(ResultCode.UN_PERMISSION.getCode(), ResultCode.UN_PERMISSION.getMessage(), data);
     }
 
     public long getCode() {
