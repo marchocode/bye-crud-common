@@ -7,7 +7,7 @@
 <dependency>
   <groupId>xyz.chaobei</groupId>
   <artifactId>bye-crud-common</artifactId>
-  <version>1.2</version>
+  <version>1.4.0</version>
 </dependency>
 ```
 
@@ -19,6 +19,9 @@
   - ResultCode 实现的具体类型，参考了http code
 - domain 
   - BaseModel Controller 层分页AO 入参信息父类
+- exception
+  - ApiException 通用自定义异常信息
+  - Asserts 断言抛出异常信息
 
 ## bye-crud-generate
 
