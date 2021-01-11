@@ -74,7 +74,7 @@ public class CommonResult<T> {
      * @return xyz.chaobei.common.api.CommonResult
      * @since 2020/9/30
      **/
-    public static CommonResult result(Boolean result) {
+    public static CommonResult result(boolean result) {
         if (result) {
             return success(true);
         }
