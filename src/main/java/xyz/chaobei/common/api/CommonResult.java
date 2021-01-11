@@ -136,21 +136,21 @@ public class CommonResult<T> {
      * 参数校验异常，并提示信息
      * <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
-     * @param message 提示语句
-     * @param <T> null
+     * @param data 提示信息
+     * @param <T>  null
      * @return xyz.chaobei.common.api.CommonResult
      * @see IErrorCode
      * @since 2020/9/30
      **/
-    public static <T> CommonResult<T> validateFailed(String message) {
-        return new CommonResult<T>(ResultCode.FIELD_ERROR.getCode(), message, null);
+    public static <T> CommonResult<T> validateFailed(T data) {
+        return new CommonResult<T>(ResultCode.FIELD_ERROR.getCode(), ResultCode.FIELD_ERROR.getMessage(), data);
     }
 
     /**
      * 提示前端需要进行认证操作
      * <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
-     * @param <T> null
+     * @param <T>  null
      * @param data 指定返回的信息
      * @return xyz.chaobei.common.api.CommonResult
      * @see IErrorCode
@@ -164,7 +164,7 @@ public class CommonResult<T> {
      * 无相关权限信息
      * <a href='mailto:maruichao52@gmail.com'>MRC</a>
      *
-     * @param <T> null
+     * @param <T>  null
      * @param data 具体返回信息
      * @return xyz.chaobei.common.api.CommonResult
      * @see IErrorCode
