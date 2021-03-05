@@ -6,7 +6,7 @@
 
     <groupId>xyz.chaobei</groupId>
     <artifactId>bye-crud-common</artifactId>
-    <version>1.4.0</version>
+    <version>1.4.1</version>
 
     <name>bye-crud-common</name>
     <description>bye-crud-generate common util</description>
@@ -17,6 +17,31 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus</artifactId>
+            <version>3.3.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.7.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <licenses>
         <license>
             <name>The ApacheSoftware License, Version 2.0</name>
@@ -43,6 +68,15 @@
             <id>ossrh</id>
             <build>
                 <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.1</version>
+                        <configuration>
+                            <source>8</source>
+                            <target>8</target>
+                        </configuration>
+                    </plugin>
                     <!-- source -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
