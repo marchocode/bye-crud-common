@@ -1,13 +1,16 @@
 ## bye-crud-common
 
-配套 `bye-crud-generate` 生成器使用的工具类
+配套 [bye-crud-generate](https://gitee.com/mrc1999/bye-crud-generate) 生成器使用的工具类
+
+[![程序猿小码/bye-crud-generate](https://gitee.com/mrc1999/bye-crud-generate/widgets/widget_card.svg?colors=4183c4,ffffff,ffffff,e3e9ed,666666,9b9b9b)](https://gitee.com/mrc1999/bye-crud-generate)
 
 请使用 `maven` 工具构建，使用当前最新版本
+
 ```xml
 <dependency>
   <groupId>xyz.chaobei</groupId>
   <artifactId>bye-crud-common</artifactId>
-  <version>1.4.0</version>
+  <version>1.4.1</version>
 </dependency>
 ```
 
@@ -22,6 +25,9 @@
 - exception
   - ApiException 通用自定义异常信息
   - Asserts 断言抛出异常信息
+- validation
+  - enums 配置注解用到的枚举信息
+  - interfaces 验证注解
 
 ## bye-crud-generate
 
